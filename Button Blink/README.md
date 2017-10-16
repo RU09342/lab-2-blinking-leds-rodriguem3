@@ -1,9 +1,9 @@
 # Button Blink(Extra)
-##Author: Matthew Rodriguez, Austin Huang, Shea Plunkett
+## Author: Matthew Rodriguez, Austin Huang, Shea Plunkett
 ## Summary 
 Initially an LED is powered and turned on and blinking, when a button is pressed the LED that is being powered will turn off and a different LED with a different
 color will turn on and blink.
-##Notes
+## Notes
 Because this program was and can be run on different MSP430 boards that use different pins, the specific pin numbers will be replaced with the variable "X" (i.e. PXOUT ^= BITX;)
 The first thing this program does is stop the watch dog timer, this is done to ensure that the processor will not reset. This is done with the following statement:
 ```c
@@ -20,7 +20,7 @@ Example:
 	PXOUT &= ~X; //Clears this pin(for safety).
     PXDIR |= BITX;  //Sets this pin as an output.
 ```
-##How the code works
+## How the code works
 To check whether or not the button has been pressed this program uses polling. This means that the bulk of the code is in an infinite while loop.
 when the button is pressed the loop will reach an if statement checking if the button is pressed and execute the code to turn on the LED.
 Example:
@@ -48,10 +48,10 @@ Example:
     }
 ```
 
-##Differences between boards
+## Differences between boards
 Primarily the MPS430g2553 and MSP430f5529 does not use __delay_cycles to cause a delay, it instead uses a for loop with variable i to loop a certain amount of time.
 i is required to be declared as a volatile unsigned int. 
 The MSP430g2553 uses for(;;) to initalize an infinite loop instead of while(1)
 All the boards have different pin assignments.
-##Implementation
+## Implementation
 Use a C compiler to run the code and upload it to an MSP430. An LED will be blinking initially, press the button to switch which LED is blinking.
