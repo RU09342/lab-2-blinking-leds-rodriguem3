@@ -26,6 +26,6 @@ int main(void)
         P1OUT ^= BIT1;                      //Toggle LED
         __delay_cycles(300000);             //delay
         P1OUT ^= BIT1;                      //Toggle LED different rate
-        __delay_cycles(300000);             /delay
+        __delay_cycles(300000);             //delay
     }
 }
