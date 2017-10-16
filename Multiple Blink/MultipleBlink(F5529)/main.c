@@ -17,8 +17,6 @@ int main(void)
     P1REN |= BIT1;
     P1OUT |= BIT1;
 
-    PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
-                                            // to activate previously configured port settings
 
     while(1)
     {
