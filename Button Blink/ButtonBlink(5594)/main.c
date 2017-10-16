@@ -9,12 +9,11 @@ int main(void)
 {
     WDTCTL = WDTPW | WDTHOLD;               // Stop WDT
 
-    // Configure GPIO
-    P1OUT &= ~BIT0;                         // Clear P1.0 output latch for a defined power-on state
-    P1DIR |= BIT0;                          // Set P1.0 to output direction
-    P1OUT &= ~BIT1;                        // Clear P1.1 output latch
-    P1DIR |= BIT1;                          // Set p1.1 output latch
-
+    
+    P1DIR |= BIT0;                          // Set P1.0 out
+    P1OUT &= ~BIT0;                         // Clear P1.0 output
+    P1DIR |= BIT1;                          // Set p1.1 out
+    P1OUT &= ~BIT1;                        // Clear P1.1
     P5DIR &= ~BIT6;
     P5REN |= BIT6;
     P5OUT |= BIT6;
