@@ -9,12 +9,10 @@ int main(void)
 {
     WDTCTL = WDTPW | WDTHOLD;               // Stop WDT
 
-    // Configure GPIO
-    P1OUT &= ~BIT0;                         // Clear P1.0 output latch for a defined power-on state
-    P1DIR |= BIT0;                          // Set P1.0 to output direction
+    P1OUT &= ~BIT0;                         // Clear P1.0 output
+    P1DIR |= BIT0;                          // Set P1.0 to output 
     P2OUT &= ~BIT0;                        // Clear P1.1 output latch
     P2DIR |= BIT0;                          // Set p1.1 output latch
-
     P1DIR &= ~BIT1;
     P1REN |= BIT1;
     P1OUT |= BIT1;
@@ -26,8 +24,9 @@ int main(void)
     {
         P1OUT ^= BIT0;                      // Toggle LED
         P2OUT ^= BIT0;                      //Toggle LED
-        __delay_cycles(500000);             //Adjust speed
-        P1OUT ^= BIT0;                      //Toggle one of the two LED at different rate
-        __delay_cycles(500000);             //Adjust speed
+        __delay_cycles(300000);             //delay
+        P2OUT ^= BIT0;                      //Toggle LED different rate
+        __delay_cycles(300000);             /delay
     }
 }
+
