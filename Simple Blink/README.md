@@ -1,8 +1,8 @@
 # Simple Blink
-##Author: Matthew Rodriguez, Austin Huang, Shea Plunkett
-##Summary
+## Author: Matthew Rodriguez, Austin Huang, Shea Plunkett
+## Summary
 The program will simply make an LED blink at a constant rate(half duty cycle).
-##Notes
+## Notes
 Because this program was and can be run on different MSP430 boards that use different pins, the specific pin numbers will be replaced with the variable "X" (i.e. PXOUT ^= BITX;)
 The first thing this program does is stop the watch dog timer, this is done to ensure that the processor will not reset. This is done with the following statement:
 ```c
@@ -31,10 +31,10 @@ Example:
 ```
 
 
-##Differences between boards
+## Differences between boards
 Primarily the MPS430g2553 and MSP430f5529 does not use __delay_cycles to cause a delay, it instead uses a for loop with variable i to loop a certain amount of time.
 i is required to be declared as a volatile unsigned int. 
 The MSP430g2553 uses for(;;) to initalize an infinite loop instead of while(1)
 All the boards have different pin assignments.
-##Implementation
+## Implementation
 Use a C compiler to run the code and upload it to an MSP430. Now watch as the LED blinks for you!
